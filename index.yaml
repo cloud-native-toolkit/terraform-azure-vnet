@@ -1,0 +1,9 @@
+id: github.com/cloud-native-toolkit/terraform-azure-vpc
+name: azure-vpc
+type: terraform
+description: Module to provision vpc on azure
+tags:
+  - tools
+  - devops
+versions: []
+cloudProvider: azure
