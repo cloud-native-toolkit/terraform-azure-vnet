@@ -40,6 +40,7 @@ resource azurerm_network_security_group default {
 
 data azurerm_network_security_group default {
   count = var.enabled ? 1 : 0
+  depends_on = [azurerm_network_security_group.default]
 
   name                = local.security_group_name
   resource_group_name = var.resource_group_name
