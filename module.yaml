@@ -1,6 +1,6 @@
-name: azure-vpc
+name: azure-vnet
 type: terraform
-description: Module to provision vpc on azure
+description: Module to provision vnet on azure
 tags:
   - vpc
   - vnet
