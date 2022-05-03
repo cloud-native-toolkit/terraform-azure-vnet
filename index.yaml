@@ -1,8 +1,8 @@
 !!map
-id: github.com/cloud-native-toolkit/terraform-azure-vpc
-name: azure-vpc
+id: github.com/cloud-native-toolkit/terraform-azure-vnet
+name: azure-vnet
 type: terraform
-description: Module to provision vpc on azure
+description: Module to provision vnet on azure
 tags:
   - vpc
   - vnet
@@ -23,7 +23,7 @@ versions:
           id: resource_group
           output: name
         type: string
-        description: The name of the IBM Cloud resource group where the VPC instance will be created.
+        description: The name of the IBM Cloud resource group where the VNet instance will be created.
       - name: region
         scope: global
         type: string
@@ -31,7 +31,7 @@ versions:
       - name: name
         scope: module
         type: string
-        description: The name of the vpc instance
+        description: The name of the vnet instance
         default: ""
       - name: name_prefix
         scope: global
@@ -65,23 +65,23 @@ versions:
     version: v1.0.1
     outputs:
       - name: name
-        description: The name of the vpc instance
+        description: The name of the vnet instance
       - name: id
-        description: The id of the vpc instance
+        description: The id of the vnet instance
       - name: acl_id
         description: The id of the network acl
       - name: crn
-        description: The CRN for the vpc instance
+        description: The CRN for the vnet instance
       - name: count
-        description: The number of VPCs created by this module. Always set to 1
+        description: The number of VNets created by this module. Always set to 1
       - name: names
-        description: The name of the vpc instance
+        description: The name of the vnet instance
       - name: ids
-        description: The id of the vpc instance
+        description: The id of the vnet instance
       - name: base_security_group
         description: The id of the base security group to be shared by other resources. The base group is different from the default security group.
       - name: addresses
-        description: The ip address ranges for the VPC
+        description: The ip address ranges for the VNet
       - name: enabled
         description: Flag indicating that the module will provision resources
   - platforms: []
@@ -99,7 +99,7 @@ versions:
           id: resource_group
           output: name
         type: string
-        description: The name of the IBM Cloud resource group where the VPC instance will be created.
+        description: The name of the IBM Cloud resource group where the VNet instance will be created.
       - name: region
         scope: global
         type: string
@@ -107,12 +107,12 @@ versions:
       - name: name
         scope: module
         type: string
-        description: The name of the vpc instance
+        description: The name of the vnet instance
         default: ""
       - name: name_prefix
         scope: global
         type: string
-        description: The name of the vpc resource
+        description: The name of the vnet resource
         default: ""
       - name: provision
         type: bool
@@ -141,23 +141,23 @@ versions:
     version: v1.0.0
     outputs:
       - name: name
-        description: The name of the vpc instance
+        description: The name of the vnet instance
       - name: id
-        description: The id of the vpc instance
+        description: The id of the vnet instance
       - name: acl_id
         description: The id of the network acl
       - name: crn
-        description: The CRN for the vpc instance
+        description: The CRN for the vnet instance
       - name: count
-        description: The number of VPCs created by this module. Always set to 1
+        description: The number of VNets created by this module. Always set to 1
       - name: names
-        description: The name of the vpc instance
+        description: The name of the vnet instance
       - name: ids
-        description: The id of the vpc instance
+        description: The id of the vnet instance
       - name: base_security_group
         description: The id of the base security group to be shared by other resources. The base group is different from the default security group.
       - name: addresses
-        description: The ip address ranges for the VPC
+        description: The ip address ranges for the VNet
       - name: enabled
         description: Flag indicating that the module will provision resources
 cloudProvider: azure
