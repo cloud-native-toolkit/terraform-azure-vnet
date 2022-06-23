@@ -40,16 +40,11 @@ output "ids" {
 }
 
 output "base_security_group" {
-  value       = var.enabled ? data.azurerm_network_security_group.default[0].id : ""
+  value       = data.azurerm_network_security_group.default.id
   description = "The id of the base security group to be shared by other resources. The base group is different from the default security group."
 }
 
 output "addresses" {
   value = lookup(local.vnet, "address_space", [])
   description = "The ip address ranges for the VPC"
-}
-
-output "enabled" {
-  value = var.enabled
-  description = "Flag indicating that the module will provision resources"
 }
