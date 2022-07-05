@@ -2,24 +2,19 @@
 output "name" {
   value       = local.vpc_name
   depends_on  = [azurerm_virtual_network.vnet]
-  description = "The name of the vpc instance"
+  description = "The name of the VNet instance"
 }
 
 output "id" {
   value       = local.vpc_id
   depends_on  = [azurerm_virtual_network.vnet]
-  description = "The id of the vpc instance"
-}
-
-output "acl_id" {
-  value       = local.acl_id
-  description = "The id of the network acl"
+  description = "The id of the VNet instance"
 }
 
 output "crn" {
   value       = local.guid
   depends_on  = [azurerm_virtual_network.vnet]
-  description = "The CRN for the vpc instance"
+  description = "The CRN for the VNet instance"
 }
 
 output "count" {
@@ -36,15 +31,10 @@ output "names" {
 output "ids" {
   value       = [local.vpc_id]
   depends_on  = [azurerm_virtual_network.vnet]
-  description = "The id of the vpc instance"
-}
-
-output "base_security_group" {
-  value       = data.azurerm_network_security_group.default.id
-  description = "The id of the base security group to be shared by other resources. The base group is different from the default security group."
+  description = "The id of the vnet instance"
 }
 
 output "addresses" {
   value = lookup(local.vnet, "address_space", [])
-  description = "The ip address ranges for the VPC"
+  description = "The ip address ranges for the VNet"
 }
