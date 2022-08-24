@@ -14,11 +14,11 @@ The module depends on the following software components:
 
 #### Command-line tools
 
-- terraform >= v0.15
+- terraform >= v1.2.7
 
 #### Terraform providers
 
-- Azure provider >= 1.5.3
+- Azure provider >= 3.0.0
 
 ### Module dependencies
 
@@ -33,6 +33,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
+      version = "=3.0.0"
     }
   }
 }
@@ -47,7 +48,7 @@ provider "azurerm" {
 }
 
 module "vpc" {
-  source = "github.com/cloud-native-toolkit/terraform-azure-vpc"
+  source = "github.com/cloud-native-toolkit/terraform-azure-vnet"
 
   resource_group_name = module.resource_group.name
   region              = var.region
